@@ -46,8 +46,8 @@ function Todo({ todos }) {
   }
 
   return (
-    <div className="grid grid-cols-1 border-zinc-200 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 gap-x-6 no-scrollbar  relative">
-         <Marquee className="flex w-96 mt-3 gap-10 absolute top-[-4vw]">
+    <div className="grid grid-cols-1 border-zinc-200 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 gap-x-6 no-scrollbar  relative mt-[-40px] h-fit">
+         {/* <Marquee className="flex w-96 mt-3 gap-10 absolute top-[-4vw]">
           <div className="m-3 text-xs border-[1px] border-black p-1 tex">
             MAKE A DAY TODO IS A WAY
           </div>
@@ -67,7 +67,7 @@ function Todo({ todos }) {
             MAKE A DAY TODO IS A WAY
           </div>
         </Marquee>
-     
+      */}
       {todos.map((item, index) => (
         <div
           key={index} 

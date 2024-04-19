@@ -10,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 function Navbar() {
   const [data, setData] = useState([]);
@@ -53,7 +54,7 @@ function Navbar() {
   return (
     <div>
       <div className="bg-zinc-200 p-2 flex justify-between text-zinc-800 w-full shadow-black">
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center gap-2 relative">
           <div className="block md:hidden font-bold text-xl">
             <CiMenuBurger className="font-bold" />
           </div>
@@ -79,12 +80,15 @@ function Navbar() {
         </div>
         <div className="flex gap-2">
        
-          <div className="border-[1px] text-sm p-2 rounded-lg text-blue-400 font-normal flex justify-center items-center">
+          <div className="border-[1px] text-sm p-2 rounded-lg text-blue-400 font-normal flex justify-center items-center ">
             <button><Link to={"/login"}>Logout</Link></button>
           </div>
         </div>
       </div>
-      {state ? ( <div className="absolute w-[75vw] h-screen right-0 font-bold flex p-3 gap-3 backdrop-blur-lg">
+      <div>
+       
+      </div>
+      {state ? ( <div className="absolute w-[70vw] h-screen right-0 font-bold flex p-3 gap-3 backdrop-blur-lg z-50">
         <div className="absolute  right-1 hover:scale-150 duration-200  text-5xl font-light text-zinc-800 "> <RxCross2 onClick={()=>setState(prev=>!prev)} />
 </div>
         {data.map((item, index) => (    
