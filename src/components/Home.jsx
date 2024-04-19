@@ -12,7 +12,7 @@ function Home() {
  
   
 function check(){
-  fetch('http://localhost:3000/todos')
+  fetch('https://todo-backend-l3vw.onrender.com/todos')
       .then(async (res) => {
         const json = await res.json();
         setTodos(json.alltodo);

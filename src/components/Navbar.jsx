@@ -30,7 +30,7 @@ function Navbar() {
 
 
         axios
-        .get("http://localhost:3000/todos/find", {
+        .get("https://todo-backend-l3vw.onrender.com/find", {
             params: { title: inputValue }, // Passing the input value as a query parameter
         })
         .then(async (res) => {
