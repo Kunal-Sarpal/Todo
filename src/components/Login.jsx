@@ -19,7 +19,7 @@ function Login() {
         .then(response => {
           // Handle successful login, such as storing token in local storage
           console.log("Login successful");
-          navigate("/");
+          navigate("/home");
         })
         .catch(error => {
           // Handle login error

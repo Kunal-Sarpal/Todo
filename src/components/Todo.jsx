@@ -7,7 +7,7 @@ function Todo({ todos }) {
 
 
   function karo(id) {
-    fetch(`http://localhost:3000/completed/${id}`, {
+    fetch(`https://todo-backend-l3vw.onrender.com/completed/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ function Todo({ todos }) {
 
   function kar2(id) {
     alert("hellox ");
-    fetch(`http://localhost:3000/delete/${id}`, {
+    fetch(`https://todo-backend-l3vw.onrender.com/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

@@ -18,9 +18,9 @@ function App() {
     <div className="relative">
   
      <Routes>
-      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/" element={<Login/>}></Route>
     
-      <Route path="/" element={<Home/>}></Route>
+      <Route path="/home" element={<Home/>}></Route>
   
       
      </Routes>
