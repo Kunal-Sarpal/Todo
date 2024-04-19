@@ -31,7 +31,7 @@ function Navbar() {
 
         axios
         .get("https://todo-backend-l3vw.onrender.com/todos/find", {
-            data: { title: inputValue }, // Passing the input value as a query parameter
+            params: { title: inputValue }, // Passing the input value as a query parameter
         })
         .then(async (res) => {
             const responseData = await res.data; // Accessing the response data directly
