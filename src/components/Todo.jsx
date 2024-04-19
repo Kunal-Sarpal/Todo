@@ -27,7 +27,7 @@ function Todo({ todos }) {
 
   function kar2(id) {
     alert("hellox ");
-    fetch(`https://todo-backend-l3vw.onrender.com/${id}`, {
+    fetch(`https://todo-backend-l3vw.onrender.com/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
