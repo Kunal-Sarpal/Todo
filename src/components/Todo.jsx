@@ -6,6 +6,7 @@ function Todo({ todos }) {
   const [handle, setHandle] = useState(false);
 
 
+
   function karo(id) {
     fetch(`https://todo-backend-l3vw.onrender.com/completed/${id}`, {
       method: "PUT",
@@ -26,7 +27,7 @@ function Todo({ todos }) {
   }
 
   function kar2(id) {
-    alert("hellox ");
+    alert("Deleted")
     fetch(`https://todo-backend-l3vw.onrender.com/delete/${id}`, {
       method: "DELETE",
       headers: {
