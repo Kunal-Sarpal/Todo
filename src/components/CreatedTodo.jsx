@@ -7,6 +7,11 @@ function CreatedTodo() {
   // const [res,setRes] = useState(false);
 
 
+useEffect(()=>{
+
+
+
+},[])
   async function takedata() {
     try {
       const res = await fetch('http://localhost:3000/todos', {

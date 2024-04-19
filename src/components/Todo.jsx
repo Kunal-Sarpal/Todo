@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
 import { RxCross1 } from "react-icons/rx";
 
 function Todo({ todos }) {
   const [handle, setHandle] = useState(false);
+
 
   function karo(id) {
     fetch(`http://localhost:3000/completed/${id}`, {
@@ -24,7 +26,7 @@ function Todo({ todos }) {
   }
 
   function kar2(id) {
-    alert("hellox ")
+    alert("hellox ");
     fetch(`http://localhost:3000/delete/${id}`, {
       method: "DELETE",
       headers: {
@@ -43,13 +45,33 @@ function Todo({ todos }) {
   }
 
   return (
-    <div className="grid grid-cols-1 border-zinc-200 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 gap-x-6 no-scrollbar ">
+    <div className="grid grid-cols-1 border-zinc-200 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 gap-x-6 no-scrollbar  relative">
+         <Marquee className="flex w-96 mt-3 gap-10 absolute top-[-4vw]">
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+          <div className="m-3 text-xs border-[1px] border-black p-1 tex">
+            MAKE A DAY TODO IS A WAY
+          </div>
+        </Marquee>
+     
       {todos.map((item, index) => (
         <div
-          key={index}
+          key={index} 
           className="shadow-sm border-[1px] border-zinc-100 shadow-zinc-400 rounded-xl h-72 w-64 flex flex-col justify-between p-3 bg-zinc-200 text-zinc-800 mb-3"
-        > 
-        
+        >
           <div
             className="w-fit h-fit text-xl  cursor-pointer bg-zinc-200 hover:animate-spin mt-[-10px] p-1"
             onClick={() => kar2(item._id)}

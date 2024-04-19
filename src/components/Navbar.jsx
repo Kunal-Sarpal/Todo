@@ -2,15 +2,19 @@ import React, { useRef, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FcTodoList } from "react-icons/fc";
 import { IoSearch } from "react-icons/io5";
+import { RxCross1 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 import { RxCross2 } from "react-icons/rx";
 
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [data, setData] = useState([]);
   const [state,setState] = useState(false)
+
   const divref = useRef();
 
   const check = (e) => {
@@ -38,6 +42,13 @@ function Navbar() {
         divref.current.value = "";
     }
   };
+  // function loginHandler(){
+  //   // eslint-disable-next-line react-hooks/rules-of-hooks
+  //   const navigate = useNavigate();
+  //   navigate("/login");
+  //   alert("Hello")
+    
+  // }
 
   return (
     <div>
@@ -67,23 +78,44 @@ function Navbar() {
           </div>
         </div>
         <div className="flex gap-2">
+       
           <div className="border-[1px] text-sm p-2 rounded-lg text-blue-400 font-normal flex justify-center items-center">
-            Logout
-          </div>
-          <div className="border-[1px] text-sm p-2 rounded-lg text-blue-400 font-normal flex justify-center items-center">
-            Login
+            <button><Link to={"/login"}>Logout</Link></button>
           </div>
         </div>
       </div>
       {state ? ( <div className="absolute w-[75vw] h-screen right-0 font-bold flex p-3 gap-3 backdrop-blur-lg">
-        <div className="absolute  right-10   text-3xl font-normal text-zinc-800 "> <RxCross2 onClick={()=>setState(prev=>!prev)} />
+        <div className="absolute  right-1 hover:scale-150 duration-200  text-5xl font-light text-zinc-800 "> <RxCross2 onClick={()=>setState(prev=>!prev)} />
 </div>
         {data.map((item, index) => (    
-          <div key={index} className=" w-44 bg-zinc-300 h-44 rounded-xl p-3 border-[1px] border-black shadow-md shadow-black">
-            <div className="border-[1px] m-2 p-1  border-black font-normal ">Title: {item.title}</div>
-            <div className="font-normal border-[1px] m-2 p-1 border-black">Desc: {item.description}</div>
-            <div className="font-bold border-[1px] m-2 p-1 border-black "> completed: {item.completed.toString()}</div>
+          <div
+          key={index}
+          className="shadow-sm border-[1px] border-zinc-100 shadow-zinc-400 rounded-xl h-72 w-64 flex flex-col justify-between p-3 bg-zinc-200 text-zinc-800 mb-3"
+        > 
+        
+          <div
+            className="w-fit h-fit text-xl bg-zinc-200  mt-[-10px] p-1 cursor-not-allowed"
+            
+          >
+            <RxCross1 className="hidden " />
           </div>
+          <div className=" mt-[-65%]">
+            <div className="flex justify-center font-light text-3xl px-2 py-1 border-b-2 border-zinc-500 ">
+              {item.title}
+            </div>
+            <div className="font-semibold text-md bg-red-100">
+              🎯 {item.description}
+            </div>
+          </div>
+          <button
+            className={`${
+              item.completed ? "bg-green-400" : "bg-orange-400"
+            } text-white p-2 rounded-md shadow shadow-zinc-500 focus:outline outline-blue-400`}
+            
+          >
+            {!item.completed ? "Mark as completed" : "Completed"}
+          </button>
+        </div>
         ))}
       </div>):(null)}
      
