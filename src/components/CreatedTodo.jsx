@@ -14,7 +14,7 @@ useEffect(()=>{
 },[])
   async function takedata() {
     try {
-      const res = await fetch('http://localhost:3000/todos', {
+      const res = await fetch('https://todo-backend-l3vw.onrender.com/todos', {
         method: 'POST',
         body: JSON.stringify({
           title: title,
