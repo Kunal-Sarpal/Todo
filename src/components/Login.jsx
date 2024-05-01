@@ -35,7 +35,7 @@ function Login() {
         <form onSubmit={loginForm}>
           <div className="flex gap-2 mb-3">
             <button className="p-2 border-b-2 border-zinc-300">Login</button>
-            <button className="p-2 border-b-2 border-zinc-500">SignUp</button>
+            {/* <button className="p-2 border-b-2 border-zinc-500">SignUp</button> */}
           </div>
           <input
             type="text"
